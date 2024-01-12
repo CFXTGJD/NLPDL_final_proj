@@ -1,0 +1,16 @@
+datasets
+transformers
+json
+scikit-learn
+random
+pytorch_lightning
+pandas
+numpy
+torch
+tqdm
+copy
+argparse
+wandb
+torchmetrics
+nltk
+rouge_score

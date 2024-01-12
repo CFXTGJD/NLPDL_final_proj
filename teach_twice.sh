@@ -1,14 +1,10 @@
-#! /bin/bash
-
-#SBATCH --partition=IAI_SLURM_3090
-#SBATCH --job-name=sbatch_example
-#SBATCH --ntasks=1
-#SBATCH --gres=gpu:1
-#SBATCH --qos=singlegpu
-#SBATCH --cpus-per-task=10
-#SBATCH --time 12:00:00
-
 wandb offline
+
+#When training from the original mT5 model:
+python finetune_mt5_train_and_test.py --dataset "jec_qa_CA" \
+    --run_name "jec_qa_CA_after_jec_qa_CA" --project_name "jec_qa_CA"
+
+#When training from some finetuned task: 
 python finetune_mt5_train_and_test.py --dataset "jec_qa_CA" \
     --run_name "jec_qa_CA_after_jec_qa_CA" --project_name "jec_qa_CA" \
     --load_from_checkpoint True \
